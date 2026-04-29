@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <!-- cover page -->
+         <div id="coverScreen" class="screen">
+            <img src="cover.png" id="journalCover">
+         </div>
+
+         <!-- jornal page screen -->
+          <div id="journalScreen" class="screen hidden">
+             <div id="settingsMenu" class="settings-menu">
+                    <h3>Settings</h3>
+                    <label>Text Size:</label>
+                    <select id="textSize">
+                        <option value="10px">Small</option>
+                        <option value="12px">Medium</option>
+                        <option value="14px">Large</option>
+                    </select>
+                    <label>Time Format:</label>
+                    <select id="timeFormat">
+                        <option value="24">24-hour</option>
+                        <option value="12">12-hour</option>
+                    </select>
+
+                 </div>
+        <!-- tabs -->
+          <div class="tabs">
+            <div class="tab active" onclick="switchTab('todo', this)">To Do</div>
+            <div class="tab" onclick="switchTab('due', this)">Due</div>
+            <div class="tab" onclick="switchTab('ideas', this)">Ideas</div>
+          </div>
+
+          <!-- journal -->
+           <div id="bookWrapper">
+                <img src="open-book.png" id="bookBg">
+                <div id="book">
+                <!-- static left page (clock and calendar)-->
+                 <div class="page left">
+                    <div class="calendar">
+                        <div id="calendarHeader"></div>
+                        <div id="calendarGrid"></div>
+                    <span id="day"></span>
+                    <span id="number"></span>
+                    <span id="month"></span>
+                    </div>
+                    <div id="clock"> 
+                            <span id="hour"></span>
+                            <span id="minute"></span>
+                    <!-- progress bar-->
+                    </div> 
+                    <h2>Progress</h2>
+                    <div class="progress-bar">
+                        <div id="progress"></div>
+                    </div>
+                <p id="progressText"></p>
+
+                <div class="icons">
+                    <button id="closeBtn">✖</button>
+                    <button id="menuBtn">☰</button>
+                    <button id="saveBtn">✓</button>
+                </div>
+                 </div>
+                 <!-- moving right page -->
+                 <div class="page right" id="flipPage">
+                 <!-- front side -->
+                 <div class="page-face front" id="frontContent"></div>
+                 <!-- back side -->
+                  <div class="page-face back" id="backContent"></div>
+                </div>
+                </div>
+                </div>
+            </div>
+        <script src="script.js"></script>
+    </body>
+</html>
